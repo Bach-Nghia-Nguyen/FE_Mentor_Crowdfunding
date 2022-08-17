@@ -1,0 +1,29 @@
+@use 'colors';
+
+.ProjectDetailSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  border: 1px solid colors.$light-gray-2;
+  margin-bottom: 20px;
+
+  .about {
+    font-family: 'Commissioner', sans-serif;
+    h2 {
+      font-size: 20px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+    p {
+      color: colors.$dark-gray;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ProjectDetailSection {
+    padding: 30px;
+  }
+}

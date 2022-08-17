@@ -1,0 +1,121 @@
+@use 'colors';
+
+.AnalyticsSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  border: 1px solid colors.$light-gray-2;
+  margin-bottom: 20px;
+
+  .results {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+
+    .total-backed-amount,
+    .total-backers,
+    .remaining-time {
+      font-family: 'Commissioner', sans-serif;
+      width: 100%;
+      .number {
+        font-weight: 700;
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+      .unit {
+        color: colors.$dark-gray;
+      }
+    }
+
+    .total-backers,
+    .remaining-time {
+      padding-left: 35px;
+    }
+
+    .total-backed-amount,
+    .total-backers {
+      border-right: 1px solid colors.$light-gray-3;
+    }
+  }
+
+  .backed-percentage {
+    progress {
+      width: 100%;
+      border-radius: 50px;
+    }
+
+    progress[value] {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    progress[value]::-webkit-progress-bar {
+      background: colors.$light-gray-2;
+    }
+    progress[value]::-webkit-progress-value {
+      background: colors.$moderate-cyan;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .AnalyticsSection {
+    padding: 30px;
+    .results {
+      .total-backed-amount,
+      .total-backers,
+      .remaining-time {
+        .number {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .AnalyticsSection {
+    .results {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .total-backed-amount,
+      .total-backers,
+      .remaining-time {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+        .number {
+          font-size: 32px;
+          margin-bottom: 10px;
+        }
+        .unit {
+          color: colors.$dark-gray;
+        }
+      }
+
+      .total-backers,
+      .remaining-time {
+        padding-left: 0px;
+        padding-top: 20px;
+      }
+
+      .total-backed-amount,
+      .total-backers {
+        border: none;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 100px;
+          left: 50%;
+          transform: translate(-50%);
+          height: 1px;
+          background-color: colors.$light-gray-3;
+        }
+      }
+    }
+  }
+}

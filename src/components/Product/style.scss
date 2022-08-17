@@ -1,0 +1,135 @@
+@use 'colors';
+
+.ProductCard {
+  font-family: 'Commissioner', sans-serif;
+  border: 1px solid colors.$light-gray-3;
+  border-radius: 15px;
+  padding: 35px 25px;
+  margin-bottom: 20px;
+
+  &.out-of-stock {
+    opacity: 0.5;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+    .name {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .pledge {
+      color: colors.$moderate-cyan;
+      font-weight: 500;
+    }
+  }
+  .body {
+    padding-bottom: 30px;
+    .description {
+      color: colors.$dark-gray;
+      line-height: 1.5;
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .remaining {
+      display: flex;
+      align-items: center;
+      .amount {
+        font-weight: 700;
+        font-size: 32px;
+        margin-right: 10px;
+      }
+      .left {
+        color: colors.$dark-gray;
+      }
+    }
+
+    .select-btn,
+    .out-of-stock-btn {
+      border-radius: 50px;
+      color: #fff;
+      font-family: 'Commissioner', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 15px 30px;
+    }
+
+    .select-btn {
+      background-color: colors.$moderate-cyan;
+    }
+
+    .out-of-stock-btn {
+      background-color: colors.$dark-gray;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ProductCard {
+    padding: 25px 20px;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 15px;
+    }
+
+    .body {
+      padding-bottom: 20px;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .remaining {
+        .amount {
+          font-size: 28px;
+          margin-right: 10px;
+        }
+      }
+
+      .select-btn,
+      .out-of-stock-btn {
+        padding: 15px 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .ProductCard {
+    padding: 30px;
+
+    .top,
+    .bottom {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .top {
+      .name {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+    }
+
+    .bottom {
+      .remaining {
+        margin-bottom: 25px;
+        .amount {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@use 'colors';
+
+.HeadSection {
+  background-image: url('../../assets/images/image-hero-desktop.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+
+  .inner-wrapper {
+    width: 1100px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .nav-menu {
+      font-weight: 500;
+      color: #fff;
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hamburger-icon,
+    .close-menu-icon {
+      display: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .HeadSection {
+    .inner-wrapper {
+      width: 85%;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .HeadSection {
+    height: 350px;
+    .inner-wrapper {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .HeadSection {
+    .inner-wrapper {
+      .nav-menu {
+        width: 230px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .HeadSection {
+    .inner-wrapper {
+      .hamburger-icon,
+      .close-menu-icon {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 90%;
+        background-color: #fff;
+        color: #000;
+        display: none;
+        border-radius: 10px;
+        z-index: 100;
+
+        .nav-link {
+          display: block;
+          height: 60px;
+          padding-left: 20px;
+          span {
+            display: flex;
+            align-items: center;
+            height: 100%;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 1px solid colors.$light-gray-3;
+          }
+        }
+
+        &.show {
+          display: block;
+        }
+      }
+    }
+  }
+}

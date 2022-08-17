@@ -1,0 +1,27 @@
+.AppContainer {
+  position: relative;
+
+  .mainContainer {
+    position: absolute;
+    width: 700px;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .AppContainer {
+    .mainContainer {
+      width: 600px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .AppContainer {
+    .mainContainer {
+      width: 90%;
+    }
+  }
+}

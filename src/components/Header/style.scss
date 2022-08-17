@@ -1,0 +1,121 @@
+@use 'colors';
+
+.HeaderSection {
+  background-color: #fff;
+  position: relative;
+  border-radius: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  border: 1px solid colors.$light-gray-2;
+  margin-bottom: 20px;
+
+  .mastercraft-logo {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .intro {
+    padding-top: 45px;
+    padding-bottom: 30px;
+    text-align: center;
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: colors.$dark-gray;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    .back-project-btn {
+      border-radius: 50px;
+      background-color: colors.$moderate-cyan;
+      color: #fff;
+      font-family: 'Commissioner', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 15px 35px;
+    }
+
+    .bookmark-btn {
+      border-radius: 50px;
+      background-color: colors.$light-gray;
+      color: colors.$dark-gray;
+      font-family: 'Commissioner', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 0;
+      padding-right: 25px;
+      .bookmark-icon {
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .HeaderSection {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+
+    .intro {
+      text-align: center;
+      h1 {
+        font-size: 26px;
+      }
+    }
+
+    .actions {
+      .back-project-btn {
+        padding: 15px 25px;
+      }
+
+      .bookmark-btn {
+        padding-right: 20px;
+        .bookmark-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .HeaderSection {
+    .intro {
+      padding-top: 50px;
+      // padding-bottom: 30px;
+      // text-align: center;
+      // h1 {
+      //   font-size: 28px;
+      //   font-weight: 700;
+      //   margin-bottom: 15px;
+      // }
+
+      // p {
+      //   color: colors.$dark-gray;
+      // }
+    }
+
+    .actions {
+      .bookmark-btn {
+        padding-right: 0px;
+        .bookmark-icon {
+          margin-right: 0px;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
